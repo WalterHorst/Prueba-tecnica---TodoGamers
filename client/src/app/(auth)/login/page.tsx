@@ -42,6 +42,7 @@ export default function LoginPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                autoComplete="off"
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
                 placeholder="tu@email.com"
               />
@@ -60,6 +61,7 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete="off"
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
                 placeholder="••••••••"
               />
@@ -69,7 +71,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-6 rounded-[12px]"
+            className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white  rounded-[12px]"
           >
             {isLoading ? "Iniciando sesión..." : "Iniciar sesión"}
           </button>

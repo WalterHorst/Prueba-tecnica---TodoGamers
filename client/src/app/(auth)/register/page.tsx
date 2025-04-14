@@ -62,6 +62,7 @@ export default function RegisterPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                autoComplete="off"
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
                 placeholder="Tu nombre"
               />
@@ -75,6 +76,7 @@ export default function RegisterPage() {
                 id="email"
                 type="email"
                 value={email}
+                autoComplete="off"
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
@@ -95,6 +97,7 @@ export default function RegisterPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
+                autoComplete="off"
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
                 placeholder="••••••••"
               />
@@ -113,6 +116,7 @@ export default function RegisterPage() {
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
+                autoComplete="off"
                 className="w-full px-4 py-3 rounded-md bg-[#d6dbe0] text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 h-10"
                 placeholder="••••••••"
               />
@@ -122,7 +126,7 @@ export default function RegisterPage() {
           <button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white py-6 rounded-[12px]"
+            className="w-full h-12 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white  rounded-[12px]"
           >
             {isLoading ? "Registrando..." : "Registrarse"}
           </button>

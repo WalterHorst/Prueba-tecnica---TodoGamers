@@ -1,6 +1,7 @@
 import type React from "react";
 import { Bell, User } from "lucide-react";
 import MobileNav from "@/components/mobile-nav";
+import Link from "next/link";
 
 export default function AppLayout({
   children,
@@ -31,9 +32,11 @@ export default function AppLayout({
           <button className="p-1">
             <Bell size={24} />
           </button>
-          <button className="p-1">
-            <User size={24} />
-          </button>
+          <Link href="/login">
+            <button className="p-1">
+              <User size={24} />
+            </button>
+          </Link>
         </div>
       </header>
       <main className="flex-1 overflow-hidden pb-16">{children}</main>
