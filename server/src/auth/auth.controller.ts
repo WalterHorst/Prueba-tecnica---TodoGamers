@@ -40,7 +40,7 @@ export class AuthController {
         secure: process.env.NODE_ENV === 'production',
       });
 
-      return true;
+      res.send(true);
     } catch (error) {
       console.error('Error during logout:', error);
       throw error;
