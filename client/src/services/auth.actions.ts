@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LoginParams, RegisterParams } from "@/types/brewerys.type";
 
-const API_BASE = process.env.BACK_API_URL || "http://localhost:4000";
+const API_BASE = process.env.NEXT_PUBLIC_BACK_API_UR || "http://localhost:4000";
 
 const axiosInstance = axios.create({
   baseURL: API_BASE,
