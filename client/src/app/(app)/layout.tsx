@@ -28,7 +28,7 @@ export default function AppLayout({
   };
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black">
-      {/* Sidebar para desktop */}
+      {/* Sidebar para escritorio */}
       <aside className="hidden md:flex flex-col w-64 border-r border-gray-800 h-screen sticky top-0">
         <div className="p-6">
           <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
@@ -40,7 +40,7 @@ export default function AppLayout({
           <ul className="space-y-6">
             <li>
               <Link
-                href="/app"
+                href="/"
                 className="flex items-center gap-4 text-white hover:text-purple-400 transition-colors"
               >
                 <Home className="h-6 w-6" />
@@ -49,7 +49,7 @@ export default function AppLayout({
             </li>
             <li>
               <Link
-                href="/search"
+                href="/"
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Search className="h-6 w-6" />
@@ -58,7 +58,7 @@ export default function AppLayout({
             </li>
             <li>
               <Link
-                href="/calendario"
+                href="/"
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Calendar className="h-6 w-6" />
@@ -67,7 +67,7 @@ export default function AppLayout({
             </li>
             <li>
               <Link
-                href="/chat"
+                href="/"
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <MessageCircle className="h-6 w-6" />
@@ -120,7 +120,7 @@ export default function AppLayout({
           </div>
         </header>
 
-        {/* Header desktop (solo visible en desktop) */}
+        {/* Header escritorio */}
         <header className="hidden md:flex justify-between items-center p-4 border-b border-gray-800 sticky top-0 z-10 bg-black">
           <div className="flex-1"></div>
           <div className="flex gap-4">
@@ -133,12 +133,11 @@ export default function AppLayout({
           </div>
         </header>
 
-        {/* Contenido principal */}
-        <main className="flex-1 overflow-hidden md:overflow-auto pb-16 md:pb-0 md:max-w-5xl md:mx-auto md:w-full">
+        <main className="flex-1 overflow-hidden md:overflow-auto pb-16 md:pb-0 md:max-w-full md:mx-auto md:w-full">
           {children}
         </main>
 
-        {/* Navegación móvil (solo visible en móvil) */}
+        {/* mobile */}
         <div className="md:hidden">
           <MobileNav />
         </div>

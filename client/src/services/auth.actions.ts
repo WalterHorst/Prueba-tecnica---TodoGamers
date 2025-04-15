@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LoginParams, RegisterParams } from "@/types/brewerys.type";
 
-const API_BASE = "https://prueba-tecnica-todogamers.onrender.com";
+const API_BASE = "http://localhost:4000";
 const axiosInstance = axios.create({
   baseURL: API_BASE,
   withCredentials: true,
@@ -17,7 +17,7 @@ export async function loginUser({ email, password }: LoginParams) {
       email,
       password,
     });
-    console.log(data);
+
     return data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.data?.message) {

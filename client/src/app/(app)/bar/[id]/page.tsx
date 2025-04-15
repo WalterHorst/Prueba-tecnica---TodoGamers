@@ -5,7 +5,6 @@ import { useParams } from "next/navigation";
 
 import Image from "next/image";
 import { MapPin, Phone, ArrowLeft } from "lucide-react";
-import MobileNav from "@/components/mobile-nav";
 import { getBreweryById } from "@/services/brewery-api.actions";
 import { useEffect, useState } from "react";
 import {
@@ -50,7 +49,7 @@ export default function BarPage() {
   const params = useParams();
   const id = params.id as string;
 
-  const [breweryDetails, setBreweryDetails] = useState<BreweryDetailParsed>(); // Aquí el tipo debería ser el que corresponda según tu estructura de datos
+  const [breweryDetails, setBreweryDetails] = useState<BreweryDetailParsed>();
 
   useEffect(() => {
     if (id) {
@@ -124,16 +123,14 @@ export default function BarPage() {
             <button className="w-full md:w-1/2 bg-gradient-to-r from-purple-600 to-pink-500 hover:bg-purple-700 text-white  rounded-[12px]  h-[48px] font-medium">
               Reservar mesa
             </button>
-            <div className="relative w-full rounded-[12px] p-[1px] bg-gradient-to-r from-blue-600 to-pink-600">
-              <button className="w-full px-4 text-white text-base font-medium bg-black rounded-[12px] h-[48px]">
+            <div className="relative  rounded-[12px] p-[1px] bg-gradient-to-r from-blue-600 to-pink-600">
+              <button className=" px-4 text-white text-base font-medium bg-black rounded-[12px] h-[48px] w-[342px]">
                 Opciones de transporte
               </button>
             </div>
           </div>
         </div>
       </div>
-
-      <MobileNav />
     </>
   );
 }

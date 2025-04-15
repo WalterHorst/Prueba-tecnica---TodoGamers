@@ -40,7 +40,6 @@ export default function UserMenu() {
           <button
             onClick={() => {
               setOpen(false);
-              // router.push("/profile");
             }}
             className="flex items-center gap-2 px-4 py-3 text-sm hover:bg-neutral-800 w-full text-left transition-colors"
           >
