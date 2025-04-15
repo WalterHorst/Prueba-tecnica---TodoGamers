@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LoginParams, RegisterParams } from "@/types/brewerys.type";
 
-const API_BASE = "https://back-production-bea7.up.railway.app";
+const API_BASE = process.env.BACK_BASE_URL || "http://localhost:3000";
 const axiosInstance = axios.create({
   baseURL: API_BASE,
   withCredentials: true,

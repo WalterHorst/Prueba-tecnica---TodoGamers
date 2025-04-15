@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Post, Res } from '@nestjs/common';
+import { Body, Controller, Post, Res } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { Response } from 'express';
 import { RegisterUserDTO } from './dto/register-user.dto';
