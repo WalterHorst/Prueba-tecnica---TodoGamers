@@ -1,7 +1,6 @@
 "use client";
 import type React from "react";
 import {
-  Bell,
   Home,
   Calendar,
   MessageCircle,
@@ -14,18 +13,25 @@ import UserMenu from "@/components/user-menu";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { logoutUser } from "@/services/auth.actions";
+import FeatureModal from "@/components/features-modal";
+
+import { useState } from "react";
+import NotificationModal from "@/components/notifications-modal";
 
 export default function AppLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [showFeature, setShowFeature] = useState(false);
+
   const router = useRouter();
   const handleLogout = async () => {
     await logoutUser();
 
     router.push("/landing");
   };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-black">
       {/* Sidebar para escritorio */}
@@ -48,40 +54,40 @@ export default function AppLayout({
               </Link>
             </li>
             <li>
-              <Link
-                href="/"
+              <button
+                onClick={() => setShowFeature(true)}
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Search className="h-6 w-6" />
                 <span className="text-lg">Buscar</span>
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/"
+              <button
+                onClick={() => setShowFeature(true)}
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <Calendar className="h-6 w-6" />
                 <span className="text-lg">Calendario</span>
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/"
+              <button
+                onClick={() => setShowFeature(true)}
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <MessageCircle className="h-6 w-6" />
                 <span className="text-lg">Chat</span>
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="/profile"
+              <button
+                onClick={() => setShowFeature(true)}
                 className="flex items-center gap-4 text-gray-400 hover:text-purple-400 transition-colors"
               >
                 <User className="h-6 w-6" />
                 <span className="text-lg">Perfil</span>
-              </Link>
+              </button>
             </li>
           </ul>
         </nav>
@@ -91,11 +97,10 @@ export default function AppLayout({
         </div>
       </aside>
 
-      {/* Contenido principal */}
       <div className="flex-1 flex flex-col">
         {/* Header móvil (solo visible en móvil) */}
         <header className="md:hidden flex justify-between items-center p-4 border-b border-gray-800 sticky top-0 z-10 bg-black">
-          <button className="p-1">
+          <button className="p-1" onClick={() => setShowFeature(true)}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -113,9 +118,7 @@ export default function AppLayout({
             </svg>
           </button>
           <div className="flex gap-4">
-            <button className="p-1">
-              <Bell size={24} />
-            </button>
+            <NotificationModal />
             <UserMenu />
           </div>
         </header>
@@ -124,14 +127,20 @@ export default function AppLayout({
         <header className="hidden md:flex justify-between items-center p-4 border-b border-gray-800 sticky top-0 z-10 bg-black">
           <div className="flex-1"></div>
           <div className="flex gap-4">
-            <button className="p-1">
-              <Bell size={24} />
-            </button>
-            <button className="p-1" onClick={handleLogout}>
+            <NotificationModal />
+            <button
+              className="p-1  hover:text-purple-400 transition-colors"
+              onClick={handleLogout}
+            >
               <LogOut size={24} />
             </button>
           </div>
         </header>
+
+        <FeatureModal
+          isOpen={showFeature}
+          onClose={() => setShowFeature(false)}
+        />
 
         <main className="flex-1 overflow-hidden md:overflow-auto pb-16 md:pb-0 md:max-w-full md:mx-auto md:w-full">
           {children}

@@ -43,7 +43,7 @@ export default function UserMenu() {
             }}
             className="flex items-center gap-2 px-4 py-3 text-sm hover:bg-neutral-800 w-full text-left transition-colors"
           >
-            <User size={16} className="text-pink-400" />
+            <User size={16} className="text-purple-400" />
             Perfil
           </button>
           <button
