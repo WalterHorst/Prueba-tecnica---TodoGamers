@@ -119,14 +119,18 @@ export default function BarPage() {
             </div>
           </div>
 
-          <div className="px-4 md:px-6 lg:px-8 space-y-3 md:flex md:gap-4 md:space-y-0">
-            <button className="w-full md:w-1/2 bg-gradient-to-r from-purple-600 to-pink-500 hover:bg-purple-700 text-white  rounded-[12px]  h-[48px] font-medium">
-              Reservar mesa
-            </button>
-            <div className="relative  rounded-[12px] p-[1px] bg-gradient-to-r from-blue-600 to-pink-600">
-              <button className=" px-4 text-white text-base font-medium bg-black rounded-[12px] h-[48px] w-[342px]">
-                Opciones de transporte
+          <div className="px-4 md:px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row md:gap-4 space-y-3 md:space-y-0">
+              <button className="w-full md:w-1/2 bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white rounded-[12px] h-[48px] font-medium transition-colors">
+                Reservar mesa
               </button>
+              <div className="w-full md:w-1/2">
+                <div className="relative rounded-[12px] p-[1px] bg-gradient-to-r from-blue-600 to-pink-600">
+                  <button className="w-full text-white text-base font-medium bg-black rounded-[12px] h-[48px]">
+                    Opciones de transporte
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

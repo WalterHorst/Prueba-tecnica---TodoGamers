@@ -8,8 +8,6 @@ const axiosInstance = axios.create({
   headers: { "Content-Type": "application/json" },
 });
 
-console.log(`API_BASE: ${API_BASE}`);
-
 // 1. Login
 export async function loginUser({ email, password }: LoginParams) {
   try {

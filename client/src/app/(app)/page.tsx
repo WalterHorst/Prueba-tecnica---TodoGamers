@@ -7,7 +7,7 @@ export default async function Home() {
   const californiaOptions = await getBreweries("California");
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white py-8">
+    <div className="min-h-screen bg-black text-white py-8">
       <div className="container mx-auto ">
         <HappyHourBanner />
         <BarCarousel title="Todas las opciones" Bars={breweries} />
