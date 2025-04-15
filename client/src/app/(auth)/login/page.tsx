@@ -40,6 +40,7 @@ export default function LoginPage() {
       router.push("/");
       setIsLoading(false);
     } catch (error: unknown) {
+      setIsLoading(false);
       console.error(error);
       if (error instanceof Error) {
         setErrorMsg(error.message);
