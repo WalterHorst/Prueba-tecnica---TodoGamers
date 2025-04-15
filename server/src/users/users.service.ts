@@ -27,6 +27,7 @@ export class UsersService {
 
       return await this.prisma.user.create({ data });
     } catch (error) {
+      if (error instanceof ConflictException) throw error;
       throw new InternalServerErrorException('Error creating user');
     }
   }

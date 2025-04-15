@@ -1,4 +1,8 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { UsersService } from '../users/users.service';
@@ -30,28 +34,36 @@ export class AuthService {
   }
 
   async login(userEmail: string, userPassword: string, res: Response) {
-    const user = await this.usersService.findByEmail(userEmail);
+    try {
+      const user = await this.usersService.findByEmail(userEmail);
 
-    if (!user) {
-      throw new UnauthorizedException('Email or password is incorrect');
+      if (!user) {
+        throw new UnauthorizedException('Email or password is incorrect');
+      }
+
+      const isMatch = await bcrypt.compare(userPassword, user.password);
+
+      if (!isMatch) {
+        throw new UnauthorizedException('Email or password is incorrect');
+      }
+
+      const payload = { email: user.email, sub: user.id };
+      const token = this.jwtService.sign(payload);
+
+      res.cookie('auth_token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        maxAge: 3600000,
+      });
+
+      return res.send('Logged in successfully');
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        throw new UnauthorizedException('Email or password is incorrect');
+      }
+
+      throw error;
     }
-
-    const isMatch = await bcrypt.compare(userPassword, user.password);
-
-    if (!isMatch) {
-      throw new UnauthorizedException('Email or password is incorrect');
-    }
-
-    const payload = { email: user.email, sub: user.id };
-    const token = this.jwtService.sign(payload);
-
-    res.cookie('auth_token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: 3600000,
-    });
-
-    return res.send('Logged in successfully');
   }
 
   private generateToken(user: User) {
