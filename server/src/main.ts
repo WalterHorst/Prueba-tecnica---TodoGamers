@@ -9,6 +9,8 @@ const ORIGIN = process.env.ORIGIN || 'http://localhost:3000';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  console.log('ORIGIN:', ORIGIN);
+
   app.enableCors({
     origin: ORIGIN,
     credentials: true,
