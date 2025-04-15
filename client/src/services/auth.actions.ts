@@ -49,7 +49,11 @@ export async function registerUser({ name, email, password }: RegisterParams) {
 // 3. Logout
 export async function logoutUser() {
   try {
+    console.log("Logout initiated");
+
     await axiosInstance.post("/auth/logout");
+
+    console.log("Logout successful");
     return true;
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.data?.message) {

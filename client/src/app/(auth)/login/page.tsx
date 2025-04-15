@@ -8,6 +8,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff } from "lucide-react";
 import { loginUser } from "@/services/auth.actions";
+import { useRouter } from "next/navigation";
 
 const schema = z.object({
   email: z.string().email("Correo inválido"),
@@ -19,6 +20,8 @@ type FormData = z.infer<typeof schema>;
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const {
     register,
@@ -32,9 +35,10 @@ export default function LoginPage() {
   const onSubmit = async (data: FormData) => {
     try {
       setErrorMsg("");
+      setIsLoading(true);
       await loginUser(data);
-
-      window.location.href = "/";
+      router.push("/");
+      setIsLoading(false);
     } catch (error: unknown) {
       console.error(error);
       if (error instanceof Error) {
@@ -112,7 +116,7 @@ export default function LoginPage() {
             disabled={isSubmitting || !!errorMsg}
             className="w-full h-12 flex items-center justify-center bg-gradient-to-r from-purple-600 to-pink-500 hover:from-purple-700 hover:to-pink-600 text-white rounded-[12px]"
           >
-            {isSubmitting ? <LoaderMini /> : "Iniciar sesión"}
+            {isLoading ? <LoaderMini /> : "Iniciar sesión"}
           </button>
 
           <div className="min-h-[1.25rem] text-center">

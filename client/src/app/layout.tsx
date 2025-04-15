@@ -5,7 +5,7 @@ import "./globals.css";
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "700"] });
 
 export const metadata = {
-  title: "Food & Drink App",
+  title: "Food & Drink",
   description: "Discover the best food and drink options",
 };
 

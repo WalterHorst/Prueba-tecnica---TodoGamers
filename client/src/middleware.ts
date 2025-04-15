@@ -5,7 +5,8 @@ export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
   console.log(`Middleware ejecutado en: ${path}`);
 
-  const isPublicPath = path === "/login" || path === "/register";
+  const isPublicPath =
+    path === "/login" || path === "/register" || path === "/landing";
   const allCookies = request.cookies.getAll();
 
   console.log("Todas las cookies:", allCookies);
@@ -21,8 +22,8 @@ export function middleware(request: NextRequest) {
 
   // Redirigir no autenticados desde rutas protegidas
   if (!isPublicPath && !token) {
-    console.log(`Redirigiendo a /login desde ${path}`);
-    return NextResponse.redirect(new URL("/login", request.url));
+    console.log(`Redirigiendo a /landing desde ${path}`);
+    return NextResponse.redirect(new URL("/landing", request.url));
   }
 
   console.log("Continuando con la solicitud normalmente");
