@@ -1,7 +1,7 @@
 import axios from "axios";
 import { LoginParams, RegisterParams } from "@/types/brewerys.type";
 
-const API_BASE = process.env.BACK_BASE_URL || "http://localhost:3000";
+const API_BASE = "https://prueba-tecnica-todogamers.onrender.com";
 const axiosInstance = axios.create({
   baseURL: API_BASE,
   withCredentials: true,
