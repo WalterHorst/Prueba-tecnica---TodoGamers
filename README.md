@@ -48,11 +48,8 @@ La aplicación cuenta con dos vistas adaptables:
 
 ## 🖼️ Capturas de Pantalla
 
-## 🖼️ Capturas de Pantalla
 
-| Vista Mobile | Vista Desktop |
-|--------------|---------------|
-| <img src="./mobile.png" width="200"/> | <img src="./desktop.png" width="400"/> |
+<img src="./mobile.png" alt="Mobile" width="200"/> <img src="./desktop.png" alt="Desktop" width="400"/>
 
 
 ---
