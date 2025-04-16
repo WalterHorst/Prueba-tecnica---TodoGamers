@@ -20,7 +20,7 @@ export async function loginUser({ email, password }: LoginParams) {
       { withCredentials: true }
     );
 
-    document.cookie = `authToken=${data.token}; path=/; secure; samesite=strict`;
+    document.cookie = `auth_token=${data.token}; path=/; secure; samesite=strict`;
 
     return data;
   } catch (error: unknown) {
@@ -57,7 +57,7 @@ export async function logoutUser() {
     await axiosInstance.post("/auth/logout");
 
     document.cookie =
-      "authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=strict";
+      "auth_token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=strict";
 
     return true;
   } catch (error: unknown) {
