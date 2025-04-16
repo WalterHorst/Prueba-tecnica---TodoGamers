@@ -20,6 +20,8 @@ export async function loginUser({ email, password }: LoginParams) {
       { withCredentials: true }
     );
 
+    document.cookie = `authToken=${data.token}; path=/; secure; samesite=strict`;
+
     return data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.data?.message) {
@@ -52,11 +54,11 @@ export async function registerUser({ name, email, password }: RegisterParams) {
 // 3. Logout
 export async function logoutUser() {
   try {
-    console.log("Logout initiated");
-
     await axiosInstance.post("/auth/logout");
 
-    console.log("Logout successful");
+    document.cookie =
+      "authToken=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC; secure; samesite=strict";
+
     return true;
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.data?.message) {
