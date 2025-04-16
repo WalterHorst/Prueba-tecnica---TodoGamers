@@ -35,9 +35,7 @@ export class AuthController {
   @Post('logout')
   async logout(@Res() res: Response) {
     try {
-      res.clearCookie('auth_token', {
-        httpOnly: true,
-      });
+      res.clearCookie('auth_token');
 
       res.send(true);
     } catch (error) {
