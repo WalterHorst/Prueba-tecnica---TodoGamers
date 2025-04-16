@@ -53,6 +53,8 @@ export class AuthService {
       res.cookie('auth_token', token, {
         httpOnly: true,
         maxAge: 3600000,
+        sameSite: 'none',
+        path: '/',
       });
 
       return res.send('Logged in successfully');

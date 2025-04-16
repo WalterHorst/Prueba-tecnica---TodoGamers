@@ -11,10 +11,14 @@ const axiosInstance = axios.create({
 // 1. Login
 export async function loginUser({ email, password }: LoginParams) {
   try {
-    const { data } = await axiosInstance.post("/auth/login", {
-      email,
-      password,
-    });
+    const { data } = await axiosInstance.post(
+      "/auth/login",
+      {
+        email,
+        password,
+      },
+      { withCredentials: true }
+    );
 
     return data;
   } catch (error: unknown) {
