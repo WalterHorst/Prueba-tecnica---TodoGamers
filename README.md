@@ -57,7 +57,7 @@ La aplicación cuenta con dos vistas adaptables:
 
   <div>
     <p align="center"><strong>Vista Desktop</strong></p>
-    <img src="./desktop.png" alt="Vista Desktop" width="600"/>
+    <img src="./desktop.png" alt="Vista Desktop" width="400"/>
   </div>
 
 </div>
