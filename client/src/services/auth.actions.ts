@@ -20,6 +20,10 @@ export async function loginUser({ email, password }: LoginParams) {
       { withCredentials: true }
     );
 
+    console.log("Login successful", data);
+
+    document.cookie = `auth_token=${data.token}; path=/; max-age=3600; secure; SameSite=None`;
+
     return data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error) && error.response?.data?.message) {
