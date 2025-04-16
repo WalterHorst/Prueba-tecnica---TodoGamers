@@ -22,7 +22,7 @@ export async function loginUser({ email, password }: LoginParams) {
 
     console.log("Login response:", data);
 
-    document.cookie = `auth_token=${data.token}; path=/; secure; samesite=strict`;
+    document.cookie = `auth_token=${data}; path=/; secure; samesite=strict`;
 
     return data;
   } catch (error: unknown) {
