@@ -57,7 +57,7 @@ export class AuthService {
         path: '/',
       });
 
-      return res.send('Logged in successfully');
+      return res.send(token);
     } catch (error) {
       if (error instanceof NotFoundException) {
         throw new UnauthorizedException('Email or password is incorrect');
