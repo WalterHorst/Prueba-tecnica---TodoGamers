@@ -56,9 +56,8 @@ La aplicación cuenta con dos vistas adaptables:
   <div>
     <p align="center"><strong>Vista Mobile</strong></p>
     <img src="./mobile.png" alt="Vista Mobile" width="200"/>
+    <img src="./mobile2.png" alt="Vista Mobile 2" width="200" height="445"/>
   </div>
-
-
 
 </div>
 
