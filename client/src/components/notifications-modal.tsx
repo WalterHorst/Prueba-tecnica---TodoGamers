@@ -74,9 +74,12 @@ export default function NotificationModal() {
     <div className="relative" ref={modalRef}>
       <button
         onClick={handleOpen}
-        className="relative p-1 flex items-center justify-center rounded-full hover:text-purple-400  transition-colors "
+        className="group relative p-1 flex items-center justify-center rounded-full transition-colors"
       >
-        <Bell size={24} />
+        <Bell
+          size={24}
+          className="text-white group-hover:text-purple-400 transition-colors"
+        />
         {hasNew && (
           <span className="absolute top-0 right-0 h-2 w-2 bg-pink-500 rounded-full animate-ping" />
         )}
