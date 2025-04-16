@@ -86,3 +86,9 @@ La aplicación cuenta con dos vistas adaptables:
 ## 📝 Notas
 
 > Asegúrate de tener **Node.js** y **npm** instalados para ejecutar correctamente el proyecto
+
+> He dejado el archivo `.env` dentro de la carpeta **server**, ya que contiene la configuración de la base de datos. Puedes levantar la base de datos con Prisma Studio usando el siguiente comando dentro de la carpeta server:
+
+```bash
+npx prisma studio
+```
