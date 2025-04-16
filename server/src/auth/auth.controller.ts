@@ -37,7 +37,6 @@ export class AuthController {
     try {
       res.clearCookie('auth_token', {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
       });
 
       res.send(true);
