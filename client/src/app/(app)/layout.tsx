@@ -37,9 +37,12 @@ export default function AppLayout({
       {/* Sidebar para escritorio */}
       <aside className="hidden md:flex flex-col w-64 border-r border-gray-800 h-screen sticky top-0">
         <div className="p-6">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
+          <Link
+            href="/"
+            className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent"
+          >
             Food & Drink
-          </h1>
+          </Link>
         </div>
 
         <nav className="flex-1 px-4 py-6">
