@@ -30,9 +30,9 @@ export default function UserMenu() {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setOpen(!open)}
-        className="p-1 flex items-center justify-center rounded-full hover:bg-neutral-800 transition-colors"
+        className="p-1 flex items-center justify-center rounded-full hover:bg-neutral-800 transition-colors "
       >
-        <User size={24} />
+        <User size={24} color="white" />
       </button>
 
       {open && (

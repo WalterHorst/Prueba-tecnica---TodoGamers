@@ -128,10 +128,13 @@ export default function AppLayout({
           <div className="flex gap-4">
             <NotificationModal />
             <button
-              className="p-1  hover:text-purple-400 transition-colors"
+              className="group p-1 hover:text-purple-400 transition-colors"
               onClick={handleLogout}
             >
-              <LogOut size={24} />
+              <LogOut
+                size={24}
+                className="text-white group-hover:text-purple-400 transition-colors"
+              />
             </button>
           </div>
         </header>
