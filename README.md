@@ -48,11 +48,19 @@ La aplicación cuenta con dos vistas adaptables:
 
 ## 🖼️ Capturas de Pantalla
 
+<div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
 
-| 📱 Mobile | 💻 Desktop |
-|:--:|:--:|
-| <img src="./mobile.png" width="200"/> | <img src="./desktop.png" width="400"/> |
+  <div>
+    <p align="center"><strong>Vista Mobile</strong></p>
+    <img src="./mobile.png" alt="Vista Mobile" width="200"/>
+  </div>
 
+  <div>
+    <p align="center"><strong>Vista Desktop</strong></p>
+    <img src="./desktop.png" alt="Vista Desktop" width="600"/>
+  </div>
+
+</div>
 
 ---
 
