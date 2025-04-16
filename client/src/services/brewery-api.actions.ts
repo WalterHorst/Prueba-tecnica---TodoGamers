@@ -21,7 +21,8 @@ export async function getBreweries(state?: string): Promise<BreweryParsed[]> {
       name: b.name,
       address: `${b.street}, ${b.city}, ${b.state_province ?? b.state}`,
       phone: b.phone ?? "No disponible",
-      imageUrl: "https://source.unsplash.com/random/800x600?bar",
+      imageUrl:
+        "https://i.pinimg.com/736x/0f/6a/be/0f6abebb50c51850ad109944a289d86d.jpg",
     }));
 
     return breweries;
