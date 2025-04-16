@@ -60,7 +60,7 @@ La aplicación cuenta con dos vistas adaptables:
     <img src="./desktop.png" alt="Vista Desktop" width="600"/>
   </div>
 
-## </div>
+</div>
 
 ---
 
