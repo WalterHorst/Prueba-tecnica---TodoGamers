@@ -4,31 +4,51 @@ Este proyecto consiste en una aplicación FullStack con un cliente (frontend) y 
 
 ## 🚀 Ejecución del Proyecto
 
-Puedes ejecutar la aplicación de dos formas:
+Antes de ejecutar el proyecto, asegúrate de haber instalado las dependencias en las carpetas correspondientes.
 
-1. **Desde la raíz del proyecto** (con concurrently):
+1. **Instalar dependencias**
 
-   ```bash
-   npm run dev
-   ```
+   - **Cliente (Frontend):**
 
-   Esto iniciará tanto el cliente como el servidor automáticamente.
+     ```bash
+     cd client
+     npm install
+     ```
 
-2. **Por separado**
+   - **Servidor (Backend):**
 
-   **Cliente (Frontend):**
+     ```bash
+     cd server
+     npm install
+     ```
 
-   ```bash
-   cd client
-   npm run dev
-   ```
+2. **Ejecutar el proyecto**
 
-   **Servidor (Backend)**
+   Puedes ejecutar la aplicación de dos formas:
 
-   ```bash
-   cd server
-   npm run start:dev
-   ```
+   1. **Desde la raíz del proyecto** (con `concurrently`):
+
+      ```bash
+      npm run dev
+      ```
+
+      Esto iniciará tanto el cliente como el servidor automáticamente.
+
+   2. **Por separado**
+
+      **Cliente (Frontend):**
+
+      ```bash
+      cd client
+      npm run dev
+      ```
+
+      **Servidor (Backend)**
+
+      ```bash
+      cd server
+      npm run start:dev
+      ```
 
 ## 🔐 Autenticación
 
