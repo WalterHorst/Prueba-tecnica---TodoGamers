@@ -20,8 +20,6 @@ export async function loginUser({ email, password }: LoginParams) {
       { withCredentials: true }
     );
 
-    console.log("Login response:", data);
-
     document.cookie = `auth_token=${data}; path=/; secure; samesite=strict`;
 
     return data;
