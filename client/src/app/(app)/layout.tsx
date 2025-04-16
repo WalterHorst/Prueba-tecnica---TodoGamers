@@ -97,9 +97,12 @@ export default function AppLayout({
       </aside>
 
       <div className="flex-1 flex flex-col">
-        {/* Header móvil (solo visible en móvil) */}
+        {/* Header mobile */}
         <header className="md:hidden flex justify-between items-center p-4 border-b border-gray-800 sticky top-0 z-10 bg-black">
-          <button className="p-1" onClick={() => setShowFeature(true)}>
+          <button
+            className="p-1 text-white"
+            onClick={() => setShowFeature(true)}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"

@@ -50,6 +50,12 @@ Antes de ejecutar el proyecto, asegúrate de haber instalado las dependencias en
       npm run start:dev
       ```
 
+## 🔗 Deploy
+
+Puedes acceder a la versión desplegada de la aplicación desde el siguiente enlace:
+
+👉 [Ir al Deploy](https://foodrink-git-deploy-walterhorsts-projects.vercel.app)
+
 ## 🔐 Autenticación
 
 Para acceder a la aplicación, es necesario registrarse e iniciar sesión.  

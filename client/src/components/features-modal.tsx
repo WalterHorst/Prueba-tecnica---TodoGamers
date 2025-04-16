@@ -25,7 +25,7 @@ export default function FeatureModal({
       {/* Fondo clickeable para cerrar */}
       <div className="absolute inset-0" onClick={onClose} />
 
-      {/* Contenedor del modal con borde gradiente redondeado */}
+      {/* Contenedor del modal con borde gradiente */}
       <div className="relative z-50 w-[90%] max-w-sm text-center">
         <div className="bg-gradient-to-r from-purple-700 to-pink-500 p-[2px] rounded-[12px] shadow-lg">
           <div className="bg-zinc-900 text-white rounded-[10px] p-6">
